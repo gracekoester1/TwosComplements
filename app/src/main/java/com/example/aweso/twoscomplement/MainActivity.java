@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
         int length = bin.length();
 
         //bin = bin + length;
-
+        //reverse string
         for(int i = length; i > 0; i--)
         {
             String reverseBin = "";
@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity
 
         char[] binArray = new char[length];
 
+        char carriedNumber = 0;
+
 
 
         for(int i = 0; i < 1; i++)
@@ -62,13 +64,40 @@ public class MainActivity extends AppCompatActivity
             {
                 binArray[i] = '1';
             }
+
+            else
+            {
+                binArray[i] = '0';
+                carriedNumber = '1';
+
+                for(int x = 1; x < binArray.length; x++)
+                {
+                    if(binArray[i] == '0')
+                    {
+                        binArray[i] = carriedNumber;
+
+                    }
+                    else
+                    {
+                        binArray[i] = '0';
+                        continue;
+
+                    }
+                }
+            }
         }
 
         bin = binArray.toString();
-        
 
-        int carriedNumber = 0;
 
+        //reverse string back to normal
+        for(int i = length; i > 0; i--)
+        {
+            String reverseBin = "";
+            reverseBin = bin;
+            bin = reverseBin;
+
+        }
 
 
         return bin;
