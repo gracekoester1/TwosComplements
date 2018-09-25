@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import java.lang.Character;
 
 import org.w3c.dom.Text;
 
@@ -38,6 +39,38 @@ public class MainActivity extends AppCompatActivity
     private String addOne(String bin)
     {
         //will return a new String that is the given String with 1 added to it
+
+        int length = bin.length();
+
+        //bin = bin + length;
+
+        for(int i = length; i > 0; i--)
+        {
+            String reverseBin = "";
+            reverseBin = bin;
+            bin = reverseBin;
+
+        }
+
+        char[] binArray = new char[length];
+
+
+
+        for(int i = 0; i < 1; i++)
+        {
+            if(binArray[i] == '0')
+            {
+                binArray[i] = '1';
+            }
+        }
+
+        bin = binArray.toString();
+        
+
+        int carriedNumber = 0;
+
+
+
         return bin;
     }
 
